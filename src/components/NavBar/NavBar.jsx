@@ -1,12 +1,14 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./NavBar.css";
 import "bootstrap-icons/font/bootstrap-icons.css"; //not working bootstrap icons here!
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import DisplayBook from "../DisplayBookContainer/DisplayBook";
+import { globalData } from "../App/App";
 
 function NavBar() {
+  let {serSearchData} = useContext(globalData)
   const [book, setBook] = useState("");
   const [result, setResult] = useState([]);
   const [isVisible, setIsVisible] = useState(false);
@@ -30,16 +32,19 @@ function NavBar() {
           "&maxResults=40"
       )
       .then((data) => {
-        console.log(data.data.items);
-        setResult(data.data.items);
+        // console.log(data.data.items);
+        // setResult(data.data.items);
+        return serSearchData(data.data.items)
+      }).then(()=>{
+        navigate("/results", <DisplayBook result={result} />);
       })
       .catch((error) => {
         console.log(error);
       });
     setIsVisible(true);
-    console.log("You clicked submit." + book);
-    //
-    // navigate("/results", <DisplayBook result={result} />);
+    // console.log("You clicked submit." + book);
+    // //
+    //  navigate("/results", <DisplayBook result={result} />);
   }
 
   return (
@@ -74,7 +79,7 @@ function NavBar() {
         </div>
         {/* result pass as prop */}
       </div>
-      {isVisible && <DisplayBook result={result} />}
+      {/* {isVisible && <DisplayBook result={result} />} */}
     </div>
   );
 }

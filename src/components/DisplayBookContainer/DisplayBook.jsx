@@ -1,8 +1,11 @@
 import CardSection from "./CardSection";
+import { useContext } from "react";
+import { globalData } from "../App/App";
 
 function DisplayBook(props) {
-  console.log(props.result);
-  let result = props.result;
+  let { searchData } = useContext(globalData);
+  console.log(searchData);
+  let result = searchData;
   return (
     <div
       className="display-container"

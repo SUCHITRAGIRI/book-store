@@ -5,12 +5,16 @@ import DisplayBook from "../DisplayBookContainer/DisplayBook";
 import Home from "../Home/Home";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../FooterContainer/Footer";
+import {createContext,useState} from 'react'
 
 console.log(CardSection);
+export let globalData  = createContext()
 
 function App() {
+   const [searchData, serSearchData] = useState('');
   return (
-   
+   <globalData.Provider value={{searchData, serSearchData}}>
+
       <Router>
          <div className="App">
         <NavBar />
@@ -21,6 +25,7 @@ function App() {
         <Footer />
         </div>
       </Router>
+   </globalData.Provider>
    
   );
 }
