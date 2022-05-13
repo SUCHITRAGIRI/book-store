@@ -1,0 +1,32 @@
+.nav-main{
+    background: #d51912;
+    padding: 15px;
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    box-shadow: rgb(0 0 0 / 16%) 0px 1px 4px;
+}
+.row{
+    display: flex;
+    align-items: center;
+}
+input{
+    padding-top: 0.8rem;  
+}
+.search-btn{
+    background-color: #FBB421;
+    font-size: 2.5rem;
+    border: none;
+    border-bottom-right-radius: .4rem;
+    border-top-right-radius: .4rem;
+}
+.col-sm2{
+    padding-left: 10rem;
+}
+
+.form-group{
+    display: flex;
+}
+
+ 

@@ -1,0 +1,6 @@
+.card-cont{   
+border: 2px solid #e7e7e7; ;
+box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+border-radius: 4px;
+padding: .5rem;
+}

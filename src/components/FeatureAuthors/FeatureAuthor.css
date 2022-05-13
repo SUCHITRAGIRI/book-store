@@ -1,0 +1,15 @@
+.feature-continue{
+    height: 20rem;
+    background: yellow;
+}
+.authors-cont{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 4rem;
+}
+.circle-img{
+  border-radius: 50%;
+  /* border: 7px solid #fff; */
+  width: 120px;
+  height: 120px;
+}

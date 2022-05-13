@@ -1,0 +1,7 @@
+.cards-cont{
+    /* border: solid blue; */
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+}
