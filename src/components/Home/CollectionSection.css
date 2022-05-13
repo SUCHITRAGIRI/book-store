@@ -1,0 +1,27 @@
+.collection-main-cont{
+    margin-top: 5.7rem;
+    height: 3.2rem;
+    background: #d51912;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.left-section > ul{
+display: flex;
+justify-content: space-evenly;
+gap: 3rem;
+
+}
+.left-section > ul>li{
+    font-weight: 500px;
+    color: aliceblue;
+}
+
+li > a{
+    color: aliceblue;
+}
+
+li > a:hover{
+    color: aliceblue;
+}

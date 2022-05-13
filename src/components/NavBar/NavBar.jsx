@@ -4,14 +4,14 @@ import "bootstrap-icons/font/bootstrap-icons.css"; //not working bootstrap icons
 import { FaSearch } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-// import CardSection from "../DisplayBookContainer/CardSection";
 import DisplayBook from "../DisplayBookContainer/DisplayBook";
 
 function NavBar() {
   const [book, setBook] = useState("");
   const [result, setResult] = useState([]);
+  const [isVisible, setIsVisible] = useState(false);
   const [apiKey, setApiKey] = useState(process.env.REACT_APP_BOOK_API_KEY);
-  
+
   const navigate = useNavigate();
 
   function handleChange(event) {
@@ -36,9 +36,10 @@ function NavBar() {
       .catch((error) => {
         console.log(error);
       });
+    setIsVisible(true);
     console.log("You clicked submit." + book);
     //
-    navigate("/results", <DisplayBook result={result} />);
+    // navigate("/results", <DisplayBook result={result} />);
   }
 
   return (
@@ -73,6 +74,7 @@ function NavBar() {
         </div>
         {/* result pass as prop */}
       </div>
+      {isVisible && <DisplayBook result={result} />}
     </div>
   );
 }

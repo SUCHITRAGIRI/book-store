@@ -1,7 +1,4 @@
-import React, { useState } from "react";
-import axios from "axios";
 import CardSection from "./CardSection";
-import NavBar from "../NavBar/NavBar";
 
 function DisplayBook(props) {
   console.log(props.result);
