@@ -14,11 +14,11 @@ function App() {
   const [searchData, serSearchData] = useState("");
   return (
     <globalData.Provider value={{ searchData, serSearchData }}>
-      <Router>
+      <Router basename={window.location.pathname || ""}>
         <div className="App">
           <NavBar />
           <Routes>
-            <Route exact path="/bookstore" element={<Home />}></Route>
+            <Route exact path="/" element={<Home />}></Route>
             <Route exact path="/results" element={<DisplayBook />}></Route>
           </Routes>
           <Footer />
