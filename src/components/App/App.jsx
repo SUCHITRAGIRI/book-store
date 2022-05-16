@@ -5,28 +5,26 @@ import DisplayBook from "../DisplayBookContainer/DisplayBook";
 import Home from "../Home/Home";
 import NavBar from "../NavBar/NavBar";
 import Footer from "../FooterContainer/Footer";
-import {createContext,useState} from 'react'
+import { createContext, useState } from "react";
 
 console.log(CardSection);
-export let globalData  = createContext()
+export let globalData = createContext();
 
 function App() {
-   const [searchData, serSearchData] = useState('');
+  const [searchData, serSearchData] = useState("");
   return (
-   <globalData.Provider value={{searchData, serSearchData}}>
-
+    <globalData.Provider value={{ searchData, serSearchData }}>
       <Router>
-         <div className="App">
-        <NavBar />
-        <Routes>
-          <Route exact path="/" element={<Home />}></Route>
-          <Route exact path="/results" element={<DisplayBook />}></Route>
-        </Routes>
-        <Footer />
+        <div className="App">
+          <NavBar />
+          <Routes>
+            <Route exact path="/bookstore" element={<Home />}></Route>
+            <Route exact path="/results" element={<DisplayBook />}></Route>
+          </Routes>
+          <Footer />
         </div>
       </Router>
-   </globalData.Provider>
-   
+    </globalData.Provider>
   );
 }
 
